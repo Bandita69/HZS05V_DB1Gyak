@@ -15,28 +15,34 @@
 
 struct aut_record {
 	int ar;
-	char *rendszam;
-	char *tipus;
+	char rendszam[10];
+	char tipus[10];
+	char szin[10];
 
 };
+
+struct aut_record Data[10];
+
 #define recordok_szama 10
-#define leghosszabb_tipus 10
+#define leghosszabb_tipus 15
 #define rendszam_hossz 7
 
-void teljes_record(struct aut_record, FILE*);
+void teljes_record(FILE*, struct aut_record);
 
 void i_edik_record(struct aut_record, FILE*, int);
+#define hanyadik 3
+
 
 int main() {
 
 	FILE *f;
-	struct aut_record r;
 
 	char record_file_name[] = "records_auto";
 
-	int arak[] = { 1000000, 2000000, 3000000 };
+	int arak[] = { 1000000, 2000000, 3000000, 4000000 };
+
 	char tipusok[recordok_szama][leghosszabb_tipus] = { "Opel", "Peugeot",
-			"Ferrari", "Lada", "Trabant"
+			"Ferrari", "Lada", "Trabant",
 
 	};
 
@@ -46,7 +52,11 @@ int main() {
 
 	};
 
-	f = fopen(record_file_name, "w");
+	char szinek[recordok_szama][6] = { "Kek", "Piros", "Sarga", "Zold",
+
+	};
+
+	f = fopen(record_file_name, "wb+");
 	if (!f) {
 		perror("Error opening input file: ");
 		return 1;
@@ -54,54 +64,63 @@ int main() {
 
 	int j;
 	// binarisfile 'veletlen' feltoltese recordokkal
-	for (j = 1; j <= recordok_szama; j++) {
-		r.ar = arak[j % 3];
-		r.tipus = tipusok[j % 5];
-		r.rendszam = rendszamok[j];
 
-		fwrite(&r, sizeof(struct aut_record), 1, f);
+	for (j = 0; j < recordok_szama; ++j) {
+
+		Data[j].ar = arak[j % 4];
+		strcpy(Data[j].rendszam, rendszamok[j]);
+		strcpy(Data[j].tipus, tipusok[j % 5]);
+		strcpy(Data[j].szin, szinek[j % 4]);
+		fwrite(&Data[j], sizeof(struct aut_record), 1, f);
+
 	}
+
 	fclose(f);
 
-	f = fopen(record_file_name, "r");
+	f = fopen(record_file_name, "rb");
 	if (!f) {
 		perror("Error opening input file: ");
 		return 1;
 	}
 
-	teljes_record(r, f);
+
+
+	struct aut_record r;
+	teljes_record(f, r);
 
 	printf("\n");
 
-	int i;
 
-	i = 3;
-	//file elejere ugras
 	rewind(f);
 
-	i_edik_record(r, f, i);
+
+
+
+	//file elejere ugras
+
+	i_edik_record(r, f, hanyadik);
 
 	fclose(f);
 
 	return 1;
 }
 
-void teljes_record(struct aut_record r, FILE *f) {
-	int j;
-	for (j = 1; j <= recordok_szama; j++) {
-		fread(&r, sizeof(struct aut_record), 1, f);
-		printf("%d:ft %s %.3s-%s \n", r.ar, r.tipus, r.rendszam,
-				r.rendszam + 3);
+void teljes_record(FILE *f, struct aut_record teszt) {
+
+	while (fread(&teszt, sizeof(struct aut_record), 1, f)) {
+		printf("%d %.3s-%s %s %s\n", teszt.ar, teszt.rendszam,
+				teszt.rendszam + 3, teszt.tipus, teszt.szin);
 	}
+
 }
 
-void i_edik_record(struct aut_record r, FILE *f, int i) {
+void i_edik_record(struct aut_record r, FILE*f, int i) {
 	int j;
 	for (j = 1; j <= i; j++) {
 		fread(&r, sizeof(struct aut_record), 1, f);
 	}
-	printf("%d-edik record: %d:ft %s %.3s-%s \n", i, r.ar, r.tipus, r.rendszam,
-			r.rendszam + 3);
+	printf("Az %d -dik record : %d %.3s-%s %s %s\n",i, r.ar, r.rendszam,
+					r.rendszam + 3, r.tipus, r.szin);
 
 }
 
