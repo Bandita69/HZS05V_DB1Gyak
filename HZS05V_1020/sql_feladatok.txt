@@ -1,0 +1,61 @@
+1. feladat
+
+create table Gyarto(adoszam int(10) primary key not null, nev varchar(30) not null, telephely varchar(100) not null);
+
+create table Termek(tkod int(10) primary key not null, nev varchar(50) not null, ear int(10) not null, gyarto int(10), constraint ckEARLen check (LENGTH(ear)>0));
+
+ALTER TABLE Termek ADD foreign key(gyarto) references Gyarto(adoszam);
+
+2. feladat
+
+ALTER TABLE Gyarto 
+ADD irsz varchar(4) not null;
+
+ALTER TABLE Gyarto 
+ADD varos varchar(40) not null;
+
+ALTER TABLE Gyarto 
+ADD utca varchar(100) not null;
+
+create table Egysegek(aru int(10), db int(10) not null, constraint ckDBLen check (LENGTH(db)>0));
+
+ALTER TABLE Egysegek ADD foreign key(aru) references Termek(tkod);
+
+create table Alkatresz(akod int(10) primary key not null, nev varchar(50) not null);
+
+create table Komponens(termek int(10), alkatresz int(10));
+
+ALTER TABLE Komponens ADD foreign key(termek) references Termek(tkod);
+ALTER TABLE Komponens ADD foreign key(alkatresz) references Alkatresz(akod);
+
+
+3. feladat
+create table Tanfolyam(tkod int(10) primary key not null, ar varchar(30) not null, tipus varchar(100) not null, megnevezes varchar(100) not null);
+
+create table Resztvevo(tajszam int(10) primary key not null, nev varchar(30) not null, lakcim varchar(100) not null);
+
+
+create table tanResz(tkod int(10), tajszam int(10), befizetes int(10) not null);
+
+ALTER TABLE tanResz ADD foreign key(tkod) references Tanfolyam(tkod);
+ALTER TABLE tanResz ADD foreign key(tajszam) references Resztvevo(tajszam);
+
+4. feladat
+
+
+CREATE TABLE termekek (tkod INT NOT NULL AUTO_INCREMENT PRIMARY KEY, nev VARCHAR(50) NOT NULL, ear INT
+CHECK (EAR > 0), kategoria CHAR(20));
+
+insert into termekek(nev, ear, kategoria) values('lapat',2000,'k1');
+insert into termekek(nev, ear, kategoria) values('sepru',4000,'k1');
+insert into termekek(nev, ear, kategoria) values('mosogato gel',1500,'k2');
+insert into termekek(nev, ear, kategoria) values('szappan',1000,'k2');
+insert into termekek(nev, ear, kategoria) values('pohar',2400,'k3');
+
+5. feladat (ezt miért?)
+
+insert into termekek(nev, ear, kategoria) values(NULL,2000,'k1');
+insert into termekek(nev, ear, kategoria) values('kulcs',0,'k4');
+insert into termekek(nev, ear, kategoria) values("almaaa",'b','k4');
+
+6. feladat
