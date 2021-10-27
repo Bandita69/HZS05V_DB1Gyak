@@ -59,3 +59,10 @@ insert into termekek(nev, ear, kategoria) values('kulcs',0,'k4');
 insert into termekek(nev, ear, kategoria) values("almaaa",'b','k4');
 
 6. feladat
+π (cim) ( KONYV )
+π (*) σ (ar>2000) ( KONYV )
+π (cim) σ (ar<1000) ( KONYV )
+π (targy) ( KONYV )
+π (cim, ar) σ (targy='AB') ( KONYV )
+
+
