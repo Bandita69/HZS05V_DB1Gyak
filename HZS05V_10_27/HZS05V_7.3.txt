@@ -1,0 +1,7 @@
+π (nev, tkod) σ (kategoria='X') ( termek )
+π (termek.nev, gyarto.nev)  ⨝ termek.gyarto = gyarto.adoszam ( termek,gyarto )
+π (gyarto.nev) σ (termek.kategoria='X') ⨝ termek.gyarto = gyarto.adoszam ( termek,gyarto )
+π (COUNT(*)) σ (ear>Y) ( termek )
+π (COUNT(*)) σ (termek.ear>Y)  ⨝ termek.gyarto = gyarto.adoszam ( termek,gyarto )
+
+
