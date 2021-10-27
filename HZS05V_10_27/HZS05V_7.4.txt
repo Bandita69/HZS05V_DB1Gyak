@@ -1,0 +1,16 @@
+- kategóriánként a termékek átlagára
+kategória γ AVG(ear) ( termek )
+
+- termékenként az alkatrészek darabszáma (termékkód, darabszám)
+tkod γ (COUNT(*)) ⨝ termek.tkod = alkatresz.akod ( termek, alkatresz)
+
+- az X nevű termékben szereplő alkatrészek listája
+π alkatresz.nev σ (termek.nev='X') ⨝ termek.tkod = alkatresz.akod ( termek, alkatresz)
+
+- azon kategóriák, ahol a termékek átlagára nagyobb mint X
+π kategória σ ((π AVG(ear))>X) (termek)
+
+
+
+
+
