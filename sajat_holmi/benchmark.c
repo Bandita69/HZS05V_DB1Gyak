@@ -2,9 +2,13 @@
  ============================================================================
  Name        : benchmark.c
  Author      : HZS05v
- Version     :
+ Version     : 0.1
  Copyright   : Your copyright notice
- Description :
+ Description : A hash és a b-fa keresési gyorsaságának mérése, a fa/tábla felépítését beleszámolva.
+ -in.txt fileból való feltöltés (alapból 1-tõl 99999-ig számok )
+ -99998 szám keresése ( a txt file elsõ sora )
+ -kapott sebességek birálása (clock() / CLOCKS_PER_SEC), nagyban függ a processzor terheltéségtõl.
+ -nálam a b-fát hozta ki gyorsabbnak többször.
  ============================================================================
  */
 
@@ -20,7 +24,7 @@ struct hash_and_memo {
 	char *hash_mem;
 };
 
-#define magic_Karp_number 500
+#define magic_Karp_number 500000
 
 struct hash_and_memo *head[magic_Karp_number] = { NULL, };
 struct hash_and_memo** tail(char *str, unsigned len);
@@ -28,12 +32,12 @@ struct hash_and_memo** tail(char *str, unsigned len);
 static unsigned int rolling_hash_index(char *str, unsigned lenght);
 
 //BTREE-s dolgok----------------------------------------------------------------
-#define MAX 3
-#define MIN 2
+#define LIMIT 3 // vagy "fok"
+#define MIN_MEDIAN 2
 
 struct BTreeNode {
-	int val[MAX + 1], count;
-	struct BTreeNode *link[MAX + 1];
+	int val[LIMIT + 1], count;
+	struct BTreeNode *link[LIMIT + 1];
 };
 
 struct BTreeNode *root;
@@ -52,45 +56,50 @@ int main() {
 	double startTime;
 	double endTime;
 	double timeElapsedBTree;
-	double timeElapsedHash;
+	int keresettSzam;
+
 	FILE *pFileIn;
-	char buffer[magic_Karp_number];
+
 	pFileIn = fopen("in.txt", "r");
+
 	startTime = (double) clock() / CLOCKS_PER_SEC;
-	// Benchmark eleje^^
+	//btree Benchmark eleje ^^
 	//---------------------------
-	//program:
+	//btree program:
 	int ch;
 	int magicnumber;
+
 	//skip a line
-	fscanf(pFileIn, "%d", &magicnumber);
+	fscanf(pFileIn, "%d", &keresettSzam);
 	while (!feof(pFileIn)) {
 		fscanf(pFileIn, "%d", &magicnumber);
 		insert(magicnumber);
 	}
 
-	// ki iras
-	//traversal(root);
-
 	printf("\nKeresett szam:\n");
-	search(99998, &ch, root);
+	search(keresettSzam, &ch, root);
+	fclose(pFileIn);
 	printf("\n");
 	printf("Btree^^ \n ------------------------------------------ \nHash¡¡\n");
 
 	//---------------------------
-	// Benchmark vege¡¡
+	//btree Benchmark vege¡¡
 
-	//ez egy irto kicsi szam
 	endTime = ((double) clock() / CLOCKS_PER_SEC);
 
 	timeElapsedBTree = endTime - startTime;
 
-	fclose(pFileIn);
 
-	//Masik Benchmark--------------------
+
+
+
+
+	//Hash Benchmark eleje¡¡--------------------
 	startTime = (double) clock() / CLOCKS_PER_SEC;
-	//Hash program kezdete:
 
+	//Hash Program:
+	double timeElapsedHash;
+	char buffer[magic_Karp_number];
 	struct hash_and_memo **prt;
 	size_t len;
 
@@ -110,8 +119,6 @@ int main() {
 			printf("\n%s    ^ Megtalátlam\n", buffer);
 		} else { /* nem talált */
 
-			//printf("%s", buffer);
-
 			//dinamikus memória allokáció, lehet ettol lassu a hash kereso, nemtudom
 			*prt = malloc(sizeof **prt);
 			(*prt)->next = NULL;
@@ -120,23 +127,30 @@ int main() {
 			memcpy((*prt)->hash_mem, buffer, 1 + len);
 		}
 	}
+	fclose(pFileIn);
 
 	//---------------------------
-	// Masodik Benchmark vege¡¡
+	// Hash Benchmark vege¡¡
 
 	endTime = ((double) clock() / CLOCKS_PER_SEC);
 
 	timeElapsedHash = endTime - startTime;
 
-
 	printf("\n");
 	fflush(stdout);
-	printf("Btree: %f\n", timeElapsedBTree);
-	printf("Hash: %f\n", timeElapsedHash);
+	if (timeElapsedBTree >= timeElapsedHash) {
+		printf("Hash volt gyorsabb %f -val\n",
+				timeElapsedBTree - timeElapsedHash);
 
+	} else {
+		printf("Btree volt gyorsabb %f -val\n",
+				timeElapsedHash - timeElapsedBTree);
+	}
 
 	return 0;
 }
+//Függvények:
+//BTREE¡¡ (alatta van a hash)
 
 struct BTreeNode* createNode(int val, struct BTreeNode *child) {
 	struct BTreeNode *newNode;
@@ -165,22 +179,22 @@ void splitNode(int val, int *pval, int pos, struct BTreeNode *node,
 		struct BTreeNode *child, struct BTreeNode **newNode) {
 	int median, j;
 
-	if (pos > MIN)
-		median = MIN + 1;
+	if (pos > MIN_MEDIAN)
+		median = MIN_MEDIAN + 1;
 	else
-		median = MIN;
+		median = MIN_MEDIAN;
 
 	*newNode = (struct BTreeNode*) malloc(sizeof(struct BTreeNode));
 	j = median + 1;
-	while (j <= MAX) {
+	while (j <= LIMIT) {
 		(*newNode)->val[j - median] = node->val[j];
 		(*newNode)->link[j - median] = node->link[j];
 		j++;
 	}
 	node->count = median;
-	(*newNode)->count = MAX - median;
+	(*newNode)->count = LIMIT - median;
 
-	if (pos <= MIN) {
+	if (pos <= MIN_MEDIAN) {
 		insertNode(val, pos, node, child);
 	} else {
 		insertNode(val, pos - median, *newNode, child);
@@ -210,7 +224,8 @@ int setValue(int val, int *pval, struct BTreeNode *node,
 		}
 	}
 	if (setValue(val, pval, node->link[pos], child)) {
-		if (node->count < MAX) {
+		//ha kisebb mint a limit akkor beilleszti, ha nagyobb akkor kettéválasztja
+		if (node->count < LIMIT) {
 			insertNode(*pval, pos, node, *child);
 		} else {
 			splitNode(*pval, pval, pos, node, *child, child);
@@ -229,7 +244,7 @@ void insert(int val) {
 		root = createNode(i, child);
 }
 
-// level kereses
+// levelérték kereses
 void search(int val, int *pos, struct BTreeNode *myNode) {
 	if (!myNode) {
 		return;
@@ -251,7 +266,7 @@ void search(int val, int *pos, struct BTreeNode *myNode) {
 	return;
 }
 
-// Traverse, vegig futas a leveleken, nagyon koltslegigenyes nagy faknal
+// Traverse, vegig futas a leveleken, nagyon koltslegigenyes nagy fáknal ( teszteléshez )
 void traversal(struct BTreeNode *myNode) {
 	int i;
 	if (myNode) {
