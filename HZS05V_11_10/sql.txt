@@ -1,0 +1,48 @@
+CREATE TABLE Tulajdonos(Tkod INT(3) primary key,
+Nev varchar(20) not null, Varos varchar(20));
+
+CREATE TABLE Auto(Rendszam varchar(7) primary key, Tipus varchar(25) not null, Szin varchar(15), Kor int(2), Ar int(8), Tulaj int(3), foreign key(Tulaj) references Tulajdonos(Tkod));
+
+
+Insert Into Tulajdonos Values(101, 'Kis János', 'Miskolc');
+Insert Into Tulajdonos Values(102, 'Kis Éva',' Mályi');
+Insert Into Tulajdonos Values(103, 'Retek Ödön', 'Miskolc');
+Insert Into Tulajdonos Values(104, 'Virág Zoltán', 'Nyék');
+Insert Into Tulajdonos Values(105, 'Nagy Eszter', 'Nyék');
+Insert Into Tulajdonos Values(106, 'Kovács Magor', 'Mályi');
+Insert Into Tulajdonos Values(107, 'Asztal Antal', 'Miskolc');
+
+
+Insert Into Auto Values('FER-831','Opel Cowsal','Piros', 18,390, 101);
+Insert Into Auto Values('IXJ-239','Suzuki Swift','Zöld', 15, 450, 105);
+Insert Into Auto Values('JAH-425','Skoda Fabia','Piros', 13, 620, 102);
+Insert Into Auto Values('MLM-211','Toyota Yaris','Fehér', 3, 1850, 105);
+Insert Into Auto Values('KFT-201','Opel Astra','Szürke', 7, 1250, 106);
+Insert Into Auto Values('TCD-443','Opel Astra','Fehér', 12, 990, 107);
+Insert Into Auto Values('KAP-290','BMW 316','Fekete', 6, 3250, 102);
+Insert Into Auto Values('ODF-525','Renmult Twingo','Fekete', 16, 280, Null);
+Insert Into Auto Values('HUB-936','Suzuki Swift','Fekete', 16, 500, Null);
+
+
+
+1
+select Auto.Rendszam, Tulajdonos.Nev FROM Auto INNER JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod;  
+2
+select Auto.* FROM Auto INNER JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod WHERE Tulajdonos.Varos ='Miskolc';
+3
+Nincs kategória tábla
+4
+select Tulajdonos.Nev, Auto.Rendszam FROM Auto RIGHT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod;  
+5
+select Auto.Rendszam, Tulajdonos.Nev FROM Auto LEFT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod; 
+6
+select * FROM Auto WHERE Auto.Ar > (select AVG(Auto.Ar) FROM Auto INNER JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod WHERE Tulajdonos.Varos ='Miskolc');
+7
+select Tulajdonos.Nev FROM Auto RIGHT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod  GROUP BY Tulajdonos.Nev HAVING COUNT(*) > 1 ;
+8
+select Rendszam, Tipus FROM Auto where tipus IN (select tipus FROM Auto GROUP BY Tipus HAVING COUNT(*) > 1) AND Ar > (select AVG(Auto.Ar) FROM Auto) ;
+
+
+
+
+
