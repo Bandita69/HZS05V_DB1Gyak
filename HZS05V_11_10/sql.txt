@@ -41,8 +41,13 @@ select * FROM Auto WHERE Auto.Ar > (select AVG(Auto.Ar) FROM Auto INNER JOIN Tul
 select Tulajdonos.Nev FROM Auto RIGHT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod  GROUP BY Tulajdonos.Nev HAVING COUNT(*) > 1 ;
 8
 select Rendszam, Tipus FROM Auto where tipus IN (select tipus FROM Auto GROUP BY Tipus HAVING COUNT(*) > 1) AND Ar > (select AVG(Auto.Ar) FROM Auto) ;
+9
+select * FROM Auto WHERE Ar < (select Ar FROM Auto WHERE Szin='Piros' ORDER BY Ar DESC LIMIT 1);
+10
+select * FROM Auto WHERE Ar < (select Ar FROM Auto WHERE Szin='Piros' ORDER BY Ar LIMIT 1);
 
-
-
-
+11
+select Tulajdonos.Nev AS VAN_AUTO FROM Auto RIGHT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod WHERE Rendszam IS NOT NULL GROUP BY Nev;
+12
+select Tulajdonos.Nev AS NINCS_AUTO FROM Auto RIGHT JOIN Tulajdonos ON Auto.tulaj = Tulajdonos.Tkod WHERE Rendszam IS NULL;
 
