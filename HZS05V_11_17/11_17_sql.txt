@@ -1,0 +1,40 @@
+1. feladat
+
+- Bővítse az Alkatresz táblát egy új ár mezővel
+ALTER TABLE Alkatresz ADD ar int(9) not null;
+- Mely gyártónak nincs terméke
+SELECT gyarto.nev FROM gyarto LEFT JOIN termek ON gyarto.adoszam = termek.gyarto WHERE termek.tkod is NULL;
+- Növelje meg az X kódú alkatrészt tartalmazó termékek árát 10%-kal
+UPDATE Termek,alkatresz,komponens SET Termek.ear = (Termek.ear*1.1) WHERE (alkatresz.nev='x') AND termek.nev = komponens.termek AND komponens.alkatresz = alkatresz.nev;
+- Mely termékhez áll rendelkezésre a legtöbb egység
+SELECT nev as Ehhez_Tartozik_Tobb_Egyseg FROM termek LEFT JOIN egysegek ON termek.tkod = egysegek.aru order by db desc limit 1;
+
+2. feladat
+SELECT tipus, AVG(ar), (MAX(ar)-MIN(ar)) AS Ertektartomany FROM tanfolyam group by tipus;
+
+SELECT megnevezes, IF(ar > 10000, "DRAGA", "OLCSO") AS DragaVagyOlcso FROM Tanfolyam;
+
+SELECT megnevezes, IF((SELECT count(*) FROM tanresz INNER JOIN Resztvevo ON tanresz.tajszam = resztvevo.tajszam GROUP BY tanresz.tajszam ) > 10, "SOK", "KEVES") FROM Tanfolyam;
+
+3. feladat 
+ALTER TABLE termek DROP COLUMN gyarto;	
+
+CREATE TABLE gyate(
+gyarto int;
+termek int;
+foreign key(gyarto) references gyarto(adoszam),
+foreign key(termek) references termek (tkod));
+
+4. feladat
+
+ALTER TABLE termek ADD kategoria varchar2(10) not null;
+	
+SELECT termek.kategoria FROM termek RIGTH JOIN gyarto ON termek.gyarto = gyarto.adoszam WHERE termek.kategoria is not null;
+
+5. feladat
+
+
+	
+
+
+
