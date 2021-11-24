@@ -1,0 +1,18 @@
+insert into Tárgy values('ABC12',10,'Matek');
+insert into Tárgy values('ABC13',5,'Programozás');
+insert into Tárgy values('ABC14',2,'Analízis');
+
+insert into Oktató values('ABC123','Dr. Borsh','Matematika és minden más','ABC12');
+insert into Oktató values('ABC124','Dr. Vidman','Analízises tanszék','ABC14');
+insert into Oktató values('ABC125','Dr. Bitman','Matematika és minden más','ABC13');
+
+insert into Hallgató values('AAA111','Smith Thunderman','BBB1','1994-02-01 00:00:00',1111,'Miskolc','Eper',100);
+insert into Hallgató values('AAA112','Adam Sellsman','BBB1','1993-03-01 00:00:00',1111,'Eger','Dózsa György',2);
+insert into Hallgató values('AAA113','Sharah Thunderman','BBB2','1993-04-02 00:00:00',1111,'Miskolc','Eper',100);
+
+insert into hallgat values('ABC12','AAA111','2021-1',1);
+insert into hallgat values('ABC12','AAA112','2021-1',2);
+insert into hallgat values('ABC12','AAA113','2021-1',5);
+insert into hallgat values('ABC13','AAA111','2021-1',3);
+insert into hallgat values('ABC14','AAA111','2021-1',3);
+insert into hallgat values('ABC14','AAA113','2021-1',4);

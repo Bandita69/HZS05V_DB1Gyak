@@ -1,0 +1,7 @@
+
+Oktató(neptunkód ,név ,tanszék ,kód )
+
+Tárgy(kód ,kredit ,megnevezés )
+NM_Kapcsolat(kód ,neptunkód, félév, vizsgajegy )
+
+Hallgató(neptunkód ,név ,tankör ,szül.d. ,irszám ,város ,utca ,hsz )

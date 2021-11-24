@@ -1,0 +1,27 @@
+ Oktatók neve!
+select név from oktató;
+ Oktatók és tantárgyaik neve!
+select név, megnevezés from oktató natural join tárgy;
+ Oktatók és tantárgyaik neve (azok az oktatók is, akiknek nincs tárgya)!
+select név, megnevezés from oktató left join tárgy on tárgy.kód = oktató.kód;
+ Az AIF Tsz(itt: Matematika és minden más)-en dolgozó oktatók neve és tárgyaik címe!
+select név, megnevezés from oktató right join tárgy on tárgy.kód = oktató.kód where tanszék='Matematika és minden más';
+ Kérdezze le az átlagos kreditpontszámot!
+ select AVG(kredit) as Átlag_Kredit from tárgy;
+ Az AIF Tsz(itt: Matematika és minden más)-en oktatók létszáma!
+select count(*) AS Oktatók_létszáma from oktató right join tárgy on tárgy.kód = oktató.kód where tanszék='Matematika és minden más';
+ A legnagyobb kreditpontszámú tárgy címe!
+select megnevezés, kredit from tárgy order by kredit DESC limit 1;
+ Kérdezze le azokat az oktatókat, akiknek nincs tárgya!
+select név from oktató where kód is null;
+ Kérdezze le azokat azok a hallgatókat, akik a 2019/2020 tanév II.(itt: 2020-1) félévében nem vettek
+fel tárgyat!
+select név from Hallgató left join hallgat ON hallgat.neptunkód=Hallgató.neptunkód where félév<>'2020-1';
+ Kérdezze le a hallgatók születési dátumát!
+select név, sz_d from hallgató;
+ Kérdezze le a tanszékenként az oktatók létszáma!
+ Melyik tárgyat hányan hallgatják!
+ Kérdezze le azokat az oktatók, akiknek 2-nél több tárgyuk van!
+ Az átlagnál alacsonyabb kreditpontú tárgyak oktatóinak neve!
+ A legtöbb tárgyat tanító oktató neve!
+ Kik azok a hallgatók, akik minden tárgyat felvettek!S

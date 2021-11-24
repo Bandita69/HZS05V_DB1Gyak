@@ -1,0 +1,35 @@
+create table Tárgy(
+kód varchar(5) primary key not null,
+kredit BIGINT(4),
+megnevezés varchar(50)
+);
+
+
+create table Oktató(
+neptunkód varchar(6) primary key not null,
+név varchar(50) not null,
+tanszék varchar(50) not null,
+kód varchar(5) not null,
+foreign key(kód) references Tárgy(kód)
+);
+
+create table Hallgató(
+neptunkód varchar(6) primary key not null,
+név varchar(50) not null,
+tankör varchar(50) not null,
+sz_d TIMESTAMP DEFAULT NOW() not null,
+irszám BIGINT(5) not null,
+város varchar(50) not null,
+utca varchar(50) not null,
+hsz varchar(10) not null
+);
+
+
+create table hallgat(
+kód varchar(5) not null,
+neptunkód varchar(6) not null,
+félév varchar(8),
+vizsgajegy BIGINT(1),
+foreign key(neptunkód) references Hallgató(neptunkód),
+foreign key(kód) references Oktató(kód)
+);
