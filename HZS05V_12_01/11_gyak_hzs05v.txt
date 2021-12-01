@@ -1,0 +1,46 @@
+1.
+R(A;B)
+
+A->B
+A->A
+B->B
+
+2.
+FD mag: AC mert AC->B
+Nem triviális FD: AC
+
+3. Igazolja, hogy ha A → B, akkor AC → B is teljesül.
+ha C=A
+és akkor AA = A és akkor teljesül
+
+
+4.
+
+Ha A->B, C->D akkor AC-> BD
+1.	AC->BC
+2.	AC->B
+3.	AC->AD
+4.	AC->D
+5.	AC->BD
+
+5.
+Adott az alábbi séma: R(A,B,C,D) az alábbi FD elemekkel:
+C → D, 
+B → DC, 
+AC → C, 
+A → B
+-1 lépés csak egy legyen jobb oldalt
+C → D, 
+B → D,
+B → C,
+AC → C, 
+A → B
+-2 lépés redundáns FD kivétele
+A → B, 
+B → C,
+C → D
+(ami az inreducibilis fd mag) 
+
+
+
+
