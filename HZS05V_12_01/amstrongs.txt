@@ -1,0 +1,22 @@
+6. Adott az alábbi táblaterv:
+RENDELÉSEK (
+dátum DATE,
+vevő_kód VARCHAR2(50),
+vevő_név VARCHAR2(100),
+termék_neve VARCHAR2(50),
+egységár INT,
+összár INT
+)
+Adja meg a táblában fellelhető FD-ket. Minden irreducubilis mag elemet és néhány
+következmény FD-t adjon meg. Egy vevő naponta csak egyszer vásárolhat.
+(több)->(egy)
+
+termék_neve->egységár;
+vevő_kód->vevő_név;
+vevő_kód->dátum;
+egységár->összár;
+termék_neve->összár;
+
+
+
+
