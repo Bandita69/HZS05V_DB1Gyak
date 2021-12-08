@@ -1,0 +1,38 @@
+7. Adott az alábbi séma: R(A,B,C,D) az alábbi FD elemekkel:
+C → D, B → DC, AC → C, A → B
+Határozza meg a séma elsődleges kulcsát.
+ha A->B és B->DC akkor A->ABCD
+
+8. Adott az alábbi táblaterv:
+RENDELÉSEK (
+dátum DATE,
+vevő_kód VARCHAR2(50),
+vevő_név VARCHAR2(100),
+termék_neve VARCHAR2(50),
+egységár INT,
+összár INT
+)
+Adja meg a séma elsődleges kulcsát.
+Ha egy vevő egynap csak egyszer várásolhat akkor a vevő_kód a primary key
+
+9. Normalizálja az alábbi táblát BCNF-re
+RENDELÉSEK (
+dátum DATE,
+vevő_kód VARCHAR2(50),
+vevő_név VARCHAR2(100),
+termék_neve VARCHAR2(50),
+egységár INT,
+összár INT
+)
+10. Végezze el BCNF normalizálást az alábbi táblán:
+SALES REPORT (SALESPERSON-NUMBER,
+SALESPERSON-NAME,
+SALES-AREA,
+CUSTOMER-NUMBER,
+CUSTOMER-NAME,
+WAREHOUSE-NUMBER,
+WAREHOUSE-LOCATION,
+SALES-AMOUNT)
+
+
+
