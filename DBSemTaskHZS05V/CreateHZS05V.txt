@@ -1,0 +1,40 @@
+create table Könyv (
+ISBN BIGINT(13) primary key not null, Cím varchar(100) not null,
+Szerző varchar(50) not null,
+constraint ckISBNLen check (LENGTH(ISBN)=13)
+);
+
+create table Példány(
+Köszám BIGINT(4) primary key AUTO_INCREMENT, Pszám BIGINT(3) not null,
+Idotar BIGINT(3) default '30' not null, ISBN BIGINT(13) not null,
+Kiszám BIGINT(5),
+foreign key(ISBN) references Könyv(ISBN), constraint ckIdotar check (Idotar in ('30', '60', '120'))
+);
+
+create table Kikölcsönzés( 
+Kiszám BIGINT(5) primary key AUTO_INCREMENT,
+Naptól TIMESTAMP DEFAULT NOW() not null, Kaszám BIGINT(4) not null
+);
+
+ALTER TABLE Példány ADD foreign key(Kiszám) references Kikölcsönzés(Kiszám);
+
+create table Hallgató (
+Kaszám BIGINT(4) primary key AUTO_INCREMENT not null,
+Név varchar(50) not null, Lakcím varchar(100) not null, Köszám BIGINT(4),
+Dátum date,
+foreign key(Köszám) references Példány(Köszám)
+);
+
+ALTER TABLE Kikölcsönzés ADD foreign key(Kaszám) references Hallgató(Kaszám);
+
+create table Kölcsönzések(
+ Kaszám BIGINT(4) not null, 
+Kolcs1 BIGINT(5), 
+Kolcs2 BIGINT(5),
+ Kolcs3 BIGINT(5));
+
+ALTER TABLE Kölcsönzések ADD foreign key(Kaszám) references Hallgató(Kaszám);
+ALTER TABLE Kölcsönzések ADD CONSTRAINT kolcsok_uniq UNIQUE (Kaszám, Kolcs1, Kolcs2, Kolcs3);
+ALTER TABLE Kölcsönzések ADD constraint onetwo check (Kolcs1 <> Kolcs2); 
+ALTER TABLE Kölcsönzések ADD constraint onethree check (Kolcs1 <> Kolcs3); 
+ALTER TABLE Kölcsönzések ADD constraint twothree check (Kolcs2 <> Kolcs3);

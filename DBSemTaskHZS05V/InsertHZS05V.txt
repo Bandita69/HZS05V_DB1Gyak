@@ -1,0 +1,274 @@
+
+insert into Könyv (ISBN, Cím, Szerző) values (8318796844523, 'Journey, The', 'Robinia Disbury');
+insert into Könyv (ISBN, Cím, Szerző) values (4174799729861, 'Care Bears Movie, The', 'Isadora Emps');
+insert into Könyv (ISBN, Cím, Szerző) values (6759453822626, 'Demonic', 'Skelly Waplington');
+insert into Könyv (ISBN, Cím, Szerző) values (5023896182080, 'Dogma', 'Jere D''Agostino');
+insert into Könyv (ISBN, Cím, Szerző) values (9745228024914, 'Cocktail', 'Archibaldo Polley');
+insert into Könyv (ISBN, Cím, Szerző) values (5484235923702, 'Bling Ring, The', 'Kerri Venour');
+insert into Könyv (ISBN, Cím, Szerző) values (6165498271478, 'Lives of Others, The (Das leben der Anderen)', 'Felice Aland');
+insert into Könyv (ISBN, Cím, Szerző) values (4190472807533, 'Mississippi Mermaid (Sirène du Mississipi, La)', 'Pavla O'' Mullan');
+insert into Könyv (ISBN, Cím, Szerző) values (1981149542727, 'The Diary of Anne Frank', 'Janessa Leighfield');
+insert into Könyv (ISBN, Cím, Szerző) values (1806245439487, 'Slave Girls (Prehistoric Women)', 'Jeffy Rustman');
+insert into Könyv (ISBN, Cím, Szerző) values (5326124060580, 'Women, The', 'Nathalie Rape');
+insert into Könyv (ISBN, Cím, Szerző) values (8025499831668, 'Orderers (Les ordres)', 'Karoly Elies');
+insert into Könyv (ISBN, Cím, Szerző) values (4913675521484, 'All the King''s Men', 'Lief Parke');
+insert into Könyv (ISBN, Cím, Szerző) values (2489837479123, 'Street Angel', 'Lavena Karys');
+insert into Könyv (ISBN, Cím, Szerző) values (9642490981883, 'Assault on Wall Street ', 'Dori Strick');
+insert into Könyv (ISBN, Cím, Szerző) values (2593351435405, 'Nine Lives (Ni liv)', 'Fawn Calyton');
+insert into Könyv (ISBN, Cím, Szerző) values (7858612905417, 'Donkey Punch', 'Flynn McVanamy');
+insert into Könyv (ISBN, Cím, Szerző) values (7444528910568, 'How to Train Your Dragon 2', 'Dane Filimore');
+insert into Könyv (ISBN, Cím, Szerző) values (1275481093150, 'Unfinished Piece for a Player Piano', 'Erika Nehlsen');
+insert into Könyv (ISBN, Cím, Szerző) values (2231986632570, 'Space Raiders', 'Monika Dodge');
+insert into Könyv (ISBN, Cím, Szerző) values (4471959554272, 'Man Vanishes, A (Ningen Johatsu)', 'Kaylyn Gilbeart');
+insert into Könyv (ISBN, Cím, Szerző) values (1148805113809, 'This Must Be the Place', 'Tore Petherick');
+
+
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Chane Wedgbrow', 'Debrecen Adriányi János utca 55');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Brockie Late', 'Pápa Adler Károly utca 48');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Gypsy Lavelle', 'Miskolc Babér utca 1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Elmore Emsden', 'Siófok Bacsinszky András út 8');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Rhody Bande', 'Miskolc Bádogos utca	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Flynn Minillo', 'Tiszaújváros Balaton utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Egon Austin', 'Tiszaújváros Bányamécs utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Raddy Gummary', 'Ózd Bartók Béla utca 4');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Yvor Siddens', 'Budapest Bem József utca	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Gerrie Fraanchyonok', 'Siófok Berekalja utca	5');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Cassandre McNee', 'Miskolc Berettyó utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Arvy Kaaskooper', 'Nyékládháza Bethlen Gábor utca	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Delmore Haking', 'Budapest Blaha Lujza utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Bobbie Roycroft', 'Nyékládháza Bolyai János utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Granny Bartosek', 'Onga Dobozi Mihály utca	1');
+
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Fritz Tustin', 'Nyékládháza Dugonics András utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Thorin Hoyle', 'Debrecen Éder György utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Rosaline Markovich', 'Nyékládháza Eper utca	4');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Tan Preble', 'Budapest Erdélyi utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Teddie Gomm', 'Pápa Erzsébet királyné útja	7');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Peyter Bartrap', 'Ózd Farkas Jeno utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Jameson Allwright', 'Debrecen Fazekas utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Hobie Ryce', 'Tapolca Hajdú utca	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Clerissa Ashlin', 'Tapolca Hajós Alfréd utca	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Elianora Rookwell', 'Tiszaújváros Ivó utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Tammie Lenham', 'Tiszaújváros Jászai Mari utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Pavel Jump', 'Tiszaújváros Kerpely Antal utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Edgardo Sybe', 'Miskolc Király utca	15');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Kerk Jindra', 'Budapest Kisfaludy Károly utca	10');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Lexis Wherry', 'Nyékládháza Kiss Erno utca	32');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Florry Ledbury', 'Nyékládháza Klapka György utca	19');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Aurelea Korneichuk', 'Budapest Komlósteto utca	8');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Vincenty Meas', 'Debrecen Koporos utca	5');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Franklyn Everiss', 'Tapolca Köpüs-völgy	7');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Nerti Mille', 'Hatvan Kovács utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Frazer McCullock', 'Nyíregyháza Középszer utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Hestia Balk', 'Budapest Külsocsabai út	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Agustin Worsall', 'Debrecen Lahner György utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Letta Domerc', 'Tiszaújváros Latabár Endre utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Guinna De Brett', 'Budapest Lavotta János utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Gordie Kerswell', 'Pápa Leszih Andor utca	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Pearline Crinkley', 'Pápa Lévay József utca	5');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Ody Lorenzetto', 'Budapest Mályva utca	2');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Benn McDermot', 'Nyékládháza Mária utca	5');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Gay Corthes', 'Miskolc Mécses utca	5');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Lulu Baffin', 'Tapolca Miskolctapolcai út	25');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Lilia Iori', 'Siófok Móra Ferenc utca	6');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Kelsi Harold', 'Onga Muszkásoldal dulo	3');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Noel Sitford', 'Nyékládháza Nagyavas középso sor	1');
+insert into Hallgató (Kaszám, Név, Lakcím) values (hallgató_sequence.nextval, 'Guillaume Felkin', 'Hatvan Zrínyi Ilona utca	27');
+
+PÉLDÁNYOK:
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 395, 30, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 237, 120, 2489837479123);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 719, 120, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 330, 60, 2489837479123);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 200, 120, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 783, 120, 1981149542727);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 495, 60, 2593351435405);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 103, 120, 4190472807533);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 823, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 285, 30, 2231986632570);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 471, 60, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 376, 30, 8025499831668);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 465, 120, 2593351435405);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 557, 60, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 960, 30, 1148805113809);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 423, 30, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 170, 120, 4174799729861);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 249, 30, 2231986632570);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 653, 30, 9745228024914);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 178, 120, 6759453822626);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 160, 30, 6165498271478);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 248, 120, 6759453822626);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 56, 120, 5326124060580);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 127, 60, 4190472807533);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 704, 60, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 55, 120, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 521, 30, 9745228024914);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 673, 60, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 696, 60, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 300, 120, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 573, 60, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 988, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 714, 30, 7444528910568);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 527, 60, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 803, 60, 4174799729861);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 567, 60, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 113, 30, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 961, 120, 1981149542727);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 580, 60, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 796, 30, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 583, 60, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 749, 120, 2231986632570);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 938, 30, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 606, 30, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 248, 60, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 429, 60, 4174799729861);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 304, 120, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 382, 120, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 385, 30, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 205, 30, 1148805113809);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 894, 120, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 824, 120, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 341, 30, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 593, 120, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 111, 120, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 558, 60, 9745228024914);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 323, 30, 1981149542727);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 753, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 390, 60, 9745228024914);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 856, 30, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 386, 60, 7858612905417);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 610, 60, 8318796844523);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 103, 120, 4471959554272);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 607, 120, 2489837479123);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 641, 120, 5326124060580);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 201, 120, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 458, 120, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 862, 120, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 272, 120, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 848, 30, 4174799729861);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 181, 120, 4190472807533);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 343, 120, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 486, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 322, 60, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 606, 30, 4190472807533);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 63, 120, 7444528910568);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 506, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 816, 120, 2489837479123);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 526, 120, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 895, 30, 5326124060580);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 550, 120, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 394, 30, 6165498271478);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 897, 120, 9642490981883);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 7, 60, 8025499831668);
+
+
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 964, 120, 1806245439487);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 969, 30, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 651, 60, 6165498271478);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 533, 60, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 355, 30, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 687, 30, 6759453822626);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 360, 120, 2489837479123);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 939, 30, 1148805113809);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 514, 120, 2593351435405);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 443, 120, 7444528910568);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 155, 30, 5023896182080);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 349, 120, 9745228024914);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 819, 60, 7858612905417);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 496, 60, 5484235923702);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 448, 60, 4913675521484);
+insert into Példány (Köszám, Pszám, Idotar, ISBN) values (példány_sequence.nextval, 759, 30, 5326124060580);
+
+
+
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '6/27/2018', 19);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '10/27/2018', 12);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '10/23/2018', 12);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '12/24/2017', 26);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '3/3/2018', 18);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '1/28/2018', 13);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '8/21/2018', 23);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '4/25/2018', 39);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '11/10/2018', 23);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '6/27/2018', 34);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '4/24/2018', 22);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '7/25/2018', 7);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '4/27/2018', 21);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '7/17/2018', 6);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '10/22/2018', 9);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '2/13/2018', 3);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '3/12/2018', 43);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '12/14/2017', 45);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '2/14/2018', 30);
+insert into Kikölcsönzés (Kiszám, Naptól, Kaszám) values (kikölcsönzés_sequence.nextval, '8/17/2018', 7);
+
+UPDATE Példány SET kiszám = 1 where köszám = 1;
+UPDATE Példány SET kiszám = 1 where köszám = 13;
+UPDATE Példány SET kiszám = 2 where köszám = 2;
+UPDATE Példány SET kiszám = 3 where köszám = 3;
+UPDATE Példány SET kiszám = 3 where köszám = 4;
+UPDATE Példány SET kiszám = 3 where köszám = 5;
+UPDATE Példány SET kiszám = 4 where köszám = 6;
+UPDATE Példány SET kiszám = 5 where köszám = 7;
+UPDATE Példány SET kiszám = 6 where köszám = 8;
+UPDATE Példány SET kiszám = 7 where köszám = 9;
+UPDATE Példány SET kiszám = 8 where köszám = 10;
+UPDATE Példány SET kiszám = 8 where köszám = 12;
+UPDATE Példány SET kiszám = 9 where köszám = 14;
+UPDATE Példány SET kiszám = 10 where köszám = 15;
+UPDATE Példány SET kiszám = 11 where köszám = 16;
+UPDATE Példány SET kiszám = 11 where köszám = 17;
+UPDATE Példány SET kiszám = 12 where köszám = 18;
+UPDATE Példány SET kiszám = 13 where köszám = 19;
+UPDATE Példány SET kiszám = 14 where köszám = 20;
+UPDATE Példány SET kiszám = 15 where köszám = 21;
+UPDATE Példány SET kiszám = 21 where köszám = 22;
+UPDATE Példány SET kiszám = 22 where köszám = 23;
+UPDATE Példány SET kiszám = 22 where köszám = 24;
+UPDATE Példány SET kiszám = 23 where köszám = 25;
+UPDATE Példány SET kiszám = 24 where köszám = 26;
+UPDATE Példány SET kiszám = 25 where köszám = 30;
+
+
+
+insert INTO Kölcsönzések values(3,13,null,null);
+
+insert INTO Kölcsönzések values(6,11,null,null);
+
+insert INTO Kölcsönzések values(7,9,15,null);
+
+insert INTO Kölcsönzések values(9,12,null,null);
+
+insert INTO Kölcsönzések values(12,21,2,null);
+
+insert INTO Kölcsönzések values(13,4,null,null);
+
+insert INTO Kölcsönzések values(18,22,null,null);
+
+insert INTO Kölcsönzések values(19,1,null,null);
+
+insert INTO Kölcsönzések values(21,10,null,null);
+
+insert INTO Kölcsönzések values(22,8,null,null);
+
+insert INTO Kölcsönzések values(23,23,null,null);
+
+insert INTO Kölcsönzések values(26,3,null,null);
+
+insert INTO Kölcsönzések values(30,25,null,null);
+
+insert INTO Kölcsönzések values(34,7,null,null);
+
+insert INTO Kölcsönzések values(39,5,null,null);
+
+insert INTO Kölcsönzések values(43,14,null,null);
+
+insert INTO Kölcsönzések values(45,24,null,null);
+
+
+update hallgató set köszám = 8, dátum = sysdate where név = 'Guillaume Felkin';
+
+update hallgató set köszám = 18, dátum = sysdate where név = 'Rosaline Markovich';
+
+update hallgató set köszám = 2, dátum = sysdate where név = 'Tan Preble';
+

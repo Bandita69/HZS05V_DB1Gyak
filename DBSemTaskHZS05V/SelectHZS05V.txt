@@ -1,0 +1,30 @@
+Lekérdezések (pdf-ben szebben átláthatóak)
+
+Melyik hallgatónak melyik könyv hanyadik példánya van kikölcsönözve?
+𝜫 Cím, Pszám, Név (Könyv ►◄ Könyv.ISBN = Példány.ISBN Példány ►◄ Példány.Kiszám = Kikölcsönzés.Kiszám Kikölcsönzés ►◄ Kikölcsönzés.Kaszám = Hallgató.Kaszám Hallgató)
+SELECT Könyv.Cím, Példány.Pszám, Hallgató.Név from Könyv INNER JOIN Példány ON Könyv.ISBN = Példány.ISBN INNER JOIN Kikölcsönzés ON Példány.Kiszám = Kikölcsönzés.Kiszám INNER JOIN Hallgató ON Kikölcsönzés.Kaszám = Hallgató.Kaszám;
+
+Rosaline Markovich szeretne kikölcsönözni egy könyvet, de az épp másnál van, mikortól várja és előre láthatólag mikor fog vissza kerülni a könyvtárba az adott könyv?
+
+𝜫 Dátum Ekkortól várod, εNaptól+Idotar Ekkor várható (σ Név = 'Rosaline Markovich’(Példány ►◄ Hallgató.Köszám = Példány.Köszám Hallgató ►◄ Példány.Kiszám = Kikölcsönzés.Kiszám Kikölcsönzés ))
+SELECT Hallgató.Dátum AS "Ekkortól várod" ,Kikölcsönzés.Naptól + Példány.Idotar AS "Ekkor várható" from Példány INNER JOIN Hallgató ON Hallgató.Köszám = Példány.Köszám INNER JOIN Kikölcsönzés ON Példány.Kiszám = Kikölcsönzés.Kiszám WHERE Hallgató.Név = 'Rosaline Markovich';
+
+Milyen könyveket vettek ki a Miskolcon élő hallgatók?
+
+𝜫 Cím (σ  Lakcím LIKE ‘Miskolc%’ ( Könyv ►◄ Könyv.ISBN = Példány.ISBN Példány ►◄ Példány.Kiszám = Kikölcsönzés.Kiszám Kikölcsönzés ►◄ Kikölcsönzés.Kaszám = Hallgató.Kaszám Hallgató ))
+SELECT Könyv.Cím from Könyv INNER JOIN Példány ON Könyv.ISBN = Példány.ISBN INNER JOIN Kikölcsönzés ON Példány.Kiszám = Kikölcsönzés.Kiszám INNER JOIN Hallgató ON Kikölcsönzés.Kaszám = Hallgató.Kaszám WHERE Hallgató.Lakcím LIKE 'Miskolc%';
+
+Melyik nap történt a legtöbb kikölcsönzés?
+
+𝜫* (σ "ROWNUM < 2" (𝜫 truncate(Naptól) NAP, 𝛤* Ennyit(Kikölcsönzés)))
+SELECT * from ( select trunc(Naptól) as Nap, count(*) as Ennyit from Kikölcsönzés  group by trunc(Naptól) order by Ennyit desc) where ROWNUM < 2;
+
+Kinél van a legtöbb könyv jelenleg?
+
+𝜫* (σ "ROWNUM < 2" (𝜫 Név, 𝛤* Ennyit( Hallgató ►◄ Hallgató.kaszám = Kikölcsönzés.kaszám Kikölcsönzés ►◄ Kikölcsönzés.kiszám = Példány.kiszám Példány))
+SELECT * from ( SELECT Hallgató.név, count(*) as Ennyi from Hallgató INNER JOIN Kikölcsönzés ON Hallgató.kaszám = Kikölcsönzés.kaszám INNER JOIN Példány ON Kikölcsönzés.kiszám = Példány.kiszám group by Hallgató.név order by Ennyi desc) where ROWNUM < 2;
+
+Könyvtár nyitása óta, Március hónapokban, összesen hány darab kikölcsönzés történt?
+
+𝛤* Ennyit (σ extract(month from Naptól) = 3 ( Könyv ►◄ Könyv.ISBN = Példány.ISBN Példány ►◄ Példány.Kiszám = Kikölcsönzés.Kiszám Kikölcsönzés ))
+SELECT Count(*) as Ennyit from Könyv INNER JOIN Példány ON Könyv.ISBN = Példány.ISBN INNER JOIN Kikölcsönzés ON Példány.Kiszám = Kikölcsönzés.Kiszám WHERE extract(MONTH from Kikölcsönzés.Naptól) = 3;
